@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+// import "@src\sass\globals.scss"
 
 export const metadata: Metadata = {
   title: 'My App',
