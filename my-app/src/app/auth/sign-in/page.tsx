@@ -3,7 +3,7 @@ import SignInPage from "./signin";
 
 const SignIn: React.FC = async() => {
     // TODO: Check if user is authenticated
-    const isAuthenticated = true; // Example
+    const isAuthenticated = false; // Example
     // const isAuthenticated = await checkUserAuthentication(); 
     if (isAuthenticated) {
         redirect("/dashboard");
