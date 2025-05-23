@@ -1,5 +1,7 @@
 "use client";
 
+import { handleSignOut } from "../lib/auth/signOutServerAction";
+
 export const SignOutButton = (props: {
     children?: React.ReactNode;
     className?: string;
@@ -8,7 +10,7 @@ export const SignOutButton = (props: {
         <button className={props.className}
             style={{ cursor: "pointer" }}
             onClick={() => {
-                // TODO: Add sign-out logic here
+                handleSignOut();
             }}
         >
             {props.children || "Sign Out"}
