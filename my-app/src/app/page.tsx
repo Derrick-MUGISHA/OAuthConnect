@@ -7,7 +7,7 @@ const Home = () => {
             <h1>Welcome to My App</h1>
             <p>This is the home page.</p>
             <div>
-                <SignInButton className="signin-button" />
+                <SignInButton className="signin-button">Sign In</SignInButton>
             </div>
         </div>
     );
