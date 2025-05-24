@@ -1,7 +1,27 @@
+'use client';
+import { handleEmailSignIn } from "@/src/lib/auth/emailSigninServerAction";
 import { handleGoogleSignIn } from "@/src/lib/auth/googleSignInServerAction";
+import { useState, useTransition } from "react";
+import { FcGoogle } from "react-icons/fc";
 
-const SignInPage: React.FC = async () => {
-   return (
+const SignInPage: React.FC = () => {
+  const  [isPending, startTransition] = useTransition();
+  const [formData, setFormData] = useState({ email: "" as string });
+  
+
+  const handleSubmit = async(event: React.FormEvent) => {
+    event.preventDefault();
+    try {
+      startTransition(async() => {
+        await handleEmailSignIn(formData.email);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+    
+  };
+
+  return (
     <div className="signin-page">
       <div className="signin-card">
         <h2>Sign In</h2>
