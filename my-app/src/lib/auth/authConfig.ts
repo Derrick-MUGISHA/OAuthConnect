@@ -4,7 +4,7 @@ import Nodemailer from "next-auth/providers/nodemailer";
 import { pool } from "@/src/lib/postgres";
 import PostgresAdapter from "@auth/pg-adapter";
 import { setName } from "@/src/lib/auth/setNameServerAction";
-import { clearStaleTokens } from "./clearStaleTokensServerAction";
+import { clearStaleTokens } from "@/src/lib/auth/clearStateTokenServerAction";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   trustHost: true,
